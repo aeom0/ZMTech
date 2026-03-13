@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ZM Tech — Landing Page
 
-## Getting Started
+Sitio web de presentación corporativa para **ZM Tech**, empresa de ingeniería de software con identidad técnico-industrial, especializada en soluciones para LATAM.
 
-First, run the development server:
+## Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+| Tecnología | Versión | Uso |
+|---|---|---|
+| Next.js | 16.x | Framework (App Router) |
+| TypeScript | 5.x | Tipado estricto |
+| Tailwind CSS | v4 | Estilos — sintaxis `bg-linear-to-*`, spacing dinámico |
+| Framer Motion | 12.x | Animaciones con `whileInView`, stagger |
+| React Hook Form + Zod | — | Formulario de contacto con validación |
+| Lucide React | — | Iconografía |
+| ESLint | 9.x | `eslint.config.mjs` (flat config) + `eslint-config-next` |
+
+## Estructura
+
+```
+src/
+├── app/
+│   ├── layout.tsx          # Metadata SEO + fuentes Inter/Space Grotesk
+│   ├── page.tsx            # Composición de secciones
+│   └── globals.css         # Grid técnico, custom animations, scrollbar
+├── components/
+│   ├── layout/
+│   │   ├── Navbar.tsx      # Sticky, glassmorphism al scroll, "INICIAR SISTEMA"
+│   │   └── Footer.tsx      # 4 columnas, "Hecho con ⚡ en Venezuela"
+│   ├── sections/
+│   │   ├── Hero.tsx        # 2 col: H1 gradiente + imagen con card flotante
+│   │   ├── TrustBanner.tsx # Franja MLB Standards
+│   │   ├── Verticals.tsx   # 3 cards con grayscale → color hover
+│   │   ├── Features.tsx    # Layout asimétrico + terminal box
+│   │   ├── ContactForm.tsx # "Inicializar Conexión" / "TRANSMITIR DATOS"
+│   │   └── FAQ.tsx         # "Protocolos Frecuentes" accordion
+│   └── ui/
+└── types/
+    └── index.ts
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Lenguaje de UI (técnico-industrial)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Convencional | ZM Tech |
+|---|---|
+| Enviar | TRANSMITIR DATOS |
+| Contacto | Inicializar Conexión |
+| FAQ | Protocolos Frecuentes |
+| Cotizar | INICIAR SISTEMA |
+| Ver servicios | VER ECOSISTEMA |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Comandos
 
-## Learn More
+```bash
+npm install        # Instalar dependencias
+npm run dev        # Servidor local → localhost:3000
+npm run build      # Build de producción
+npm run lint       # ESLint (node_modules/.bin/eslint src/)
+```
 
-To learn more about Next.js, take a look at the following resources:
+> **Nota:** `npm run lint` (que usa `next lint`) tiene un issue de entorno en el CLI tool. Usar directamente: `node node_modules/.bin/eslint src/`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Notas Tailwind v4
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Gradientes: `bg-linear-to-r` (canónico v4), no `bg-gradient-to-r`
+- Spacing dinámico: `w-150 = 37.5rem`, `h-105 = 26.25rem` — sin corchetes
+- Opacidad: `bg-white/3`, `border-white/8` (no `[0.03]`)
 
-## Deploy on Vercel
+## Despliegue
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Optimizado para Vercel. Push a `main` → deploy automático.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+© 2025 ZM Tech. Todos los derechos reservados.
