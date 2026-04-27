@@ -21,6 +21,7 @@ const inputClass =
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   const {
     register,
@@ -28,15 +29,25 @@ export default function ContactForm() {
     formState: { errors, isSubmitting },
   } = useForm<FormData>({ resolver: zodResolver(schema) })
 
-  const onSubmit = async (_data: FormData) => {
-    await new Promise((r) => setTimeout(r, 800))
-    setSubmitted(true)
+  const onSubmit = async (data: FormData) => {
+    setError(null)
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      })
+      if (!res.ok) throw new Error('Error al enviar')
+      setSubmitted(true)
+    } catch {
+      setError('Hubo un error al enviar. Intenta de nuevo o escríbenos directamente por WhatsApp.')
+    }
   }
 
   return (
     <section id="contacto" className="py-24">
       <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
-        <div className="rounded-xl border border-white/10 bg-white/2 p-8">
+        <div className="rounded-xl border border-white/10 bg-white/5 p-8">
           {/* Header */}
           <div className="mb-2 flex items-center gap-3">
             <Terminal className="h-6 w-6 text-violet-400" />
@@ -55,7 +66,6 @@ export default function ContactForm() {
           ) : (
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-                {/* Nombre */}
                 <div>
                   <label className={labelClass}>NOMBRE / OPERADOR</label>
                   <input {...register('nombre')} className={inputClass} placeholder="John Doe" />
@@ -64,7 +74,6 @@ export default function ContactForm() {
                   )}
                 </div>
 
-                {/* Empresa */}
                 <div>
                   <label className={labelClass}>EMPRESA / ORGANIZACIÓN</label>
                   <input {...register('empresa')} className={inputClass} placeholder="Acme Corp" />
@@ -73,26 +82,24 @@ export default function ContactForm() {
                   )}
                 </div>
 
-                {/* WhatsApp */}
                 <div>
                   <label className={labelClass}>ENLACE COM (WHATSAPP)</label>
                   <input
                     {...register('whatsapp')}
                     className={inputClass}
-                    placeholder="+1 234 567 8900"
+                    placeholder="+58 412 000 0000"
                   />
                   {errors.whatsapp && (
                     <p className="mt-1 font-mono text-xs text-red-400">{errors.whatsapp.message}</p>
                   )}
                 </div>
 
-                {/* Presupuesto */}
                 <div>
                   <label className={labelClass}>PRESUPUESTO ESTIMADO (USD)</label>
                   <input
                     {...register('presupuesto')}
                     className={inputClass}
-                    placeholder="Ej: $5k - $10k"
+                    placeholder="Ej: $150 - $400"
                   />
                   {errors.presupuesto && (
                     <p className="mt-1 font-mono text-xs text-red-400">
@@ -101,6 +108,10 @@ export default function ContactForm() {
                   )}
                 </div>
               </div>
+
+              {error && (
+                <p className="mt-4 font-mono text-xs text-red-400">{error}</p>
+              )}
 
               <button
                 type="submit"

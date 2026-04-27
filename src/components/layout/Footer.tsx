@@ -66,7 +66,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="flex flex-col items-center justify-between gap-2 border-t border-white/10 pt-8 text-xs text-gray-600 sm:flex-row">
-          <span>© 2025 ZM Tech. Todos los derechos reservados.</span>
+          <span>© {new Date().getFullYear()} ZM Tech. Todos los derechos reservados.</span>
           <span>Hecho con ⚡ en Venezuela</span>
         </div>
       </div>
