@@ -23,7 +23,7 @@ const verticals: Vertical[] = [
     iconBg: 'bg-blue-500/10',
     title: 'ZM Industrial Core',
     description:
-      'Sistemas ERP, gestión de inventario y logística con trazabilidad total. Diseñado para plantas y manufactura.',
+      'Controla tu empresa desde una sola pantalla. Inventario, logística, producción y reportes en tiempo real — diseñado para negocios que no pueden darse el lujo de fallar.',
     image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80',
     hoverBorder: 'hover:border-blue-500/40',
     glow: 'rgba(59,130,246,0.2)',
@@ -34,7 +34,7 @@ const verticals: Vertical[] = [
     iconBg: 'bg-violet-500/10',
     title: 'ZM Beauty Engine',
     description:
-      'Plataformas de agendamiento, CRM de clientes y punto de venta para Spas, estéticas y clínicas de belleza.',
+      'Tu spa o estética merece tecnología de primera. Agenda online, historial de clientes, punto de venta y recordatorios automáticos — todo en una app que tu equipo va a querer usar.',
     image: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80',
     hoverBorder: 'hover:border-violet-500/40',
     glow: 'rgba(139,92,246,0.2)',
@@ -45,7 +45,7 @@ const verticals: Vertical[] = [
     iconBg: 'bg-emerald-500/10',
     title: 'ZM Workshop & Parts',
     description:
-      'E-commerce especializado, catálogos por VIN, y gestión de talleres mecánicos integrados.',
+      'Vende repuestos, gestiona tu taller y atiende más clientes sin caos. Catálogo digital, órdenes de trabajo y seguimiento de inventario en un solo lugar.',
     image: 'https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800&q=80',
     hoverBorder: 'hover:border-emerald-500/40',
     glow: 'rgba(16,185,129,0.2)',

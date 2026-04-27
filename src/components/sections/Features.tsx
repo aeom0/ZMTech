@@ -17,33 +17,33 @@ const features: Feature[] = [
     icon: Activity,
     iconColor: 'text-violet-400',
     iconBg: 'bg-violet-500/10',
-    title: 'Optimización de Procesos',
+    title: 'Tu equipo trabaja más rápido',
     description:
-      'Interfaces crudas y eficientes. Eliminamos la fricción para que tu equipo opere a máxima velocidad.',
+      'Eliminamos los procesos que frenan tu negocio. Interfaces limpias, flujos directos y cero pasos innecesarios para que tu gente se enfoque en lo que importa.',
   },
   {
     icon: Bot,
     iconColor: 'text-blue-400',
     iconBg: 'bg-blue-500/10',
-    title: 'Mantenimiento Evolutivo con IA',
+    title: 'Soporte que no te abandona',
     description:
-      'No solo reparamos bugs. Nuestro sistema monitorea, predice fallos y sugiere mejoras automáticamente 24/7.',
+      'No desaparecemos después del lanzamiento. Monitoreamos tu sistema 24/7, resolvemos problemas antes de que los notes y mejoramos el software con el tiempo.',
   },
   {
     icon: TrendingUp,
     iconColor: 'text-emerald-400',
     iconBg: 'bg-emerald-500/10',
-    title: 'Escalabilidad Garantizada',
+    title: 'Crece sin romper nada',
     description:
-      'Arquitectura nativa en la nube. Tu sistema soportará desde 100 hasta 1,000,000 usuarios sin reescribir la base.',
+      'Construimos pensando en el futuro. Tu plataforma aguanta desde tus primeros clientes hasta miles de usuarios, sin necesidad de rehacer todo desde cero.',
   },
   {
     icon: Shield,
     iconColor: 'text-yellow-400',
     iconBg: 'bg-yellow-500/10',
-    title: 'Propiedad Absoluta',
+    title: 'El código es tuyo, punto',
     description:
-      'Transparencia total. El código fuente, los datos y la infraestructura te pertenecen desde el día uno.',
+      'Transparencia total desde el día uno. El código fuente, los datos y la infraestructura te pertenecen a ti — sin licencias trampa ni dependencias de por vida.',
   },
 ]
 
@@ -65,8 +65,7 @@ export default function Features() {
             </p>
             <h2 className="mb-6 text-5xl leading-tight font-black text-white">Por qué ZM Tech</h2>
             <p className="mb-8 leading-relaxed text-gray-400">
-              No construimos páginas web genéricas. Desarrollamos infraestructuras de software
-              robustas diseñadas para dominar tu nicho de mercado.
+              No somos una agencia más. Somos el equipo técnico que tu negocio necesitaba — sin los costos de tener uno propio.
             </p>
 
             {/* Terminal box */}

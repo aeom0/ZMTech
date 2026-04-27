@@ -51,9 +51,9 @@ export default function ContactForm() {
           {/* Header */}
           <div className="mb-2 flex items-center gap-3">
             <Terminal className="h-6 w-6 text-violet-400" />
-            <h2 className="text-3xl font-black text-white">Inicializar Conexión</h2>
+            <h2 className="text-3xl font-black text-white">¿Tienes un proyecto en mente?</h2>
           </div>
-          <p className="mb-4 font-mono text-sm text-gray-500">Status: Ready to receive payload</p>
+          <p className="mb-4 font-mono text-sm text-gray-500">Cuéntanos qué necesitas. Te respondemos en menos de 24 horas con una propuesta concreta.</p>
           <div className="mb-8 border-t border-white/10" />
 
           {submitted ? (
@@ -61,7 +61,7 @@ export default function ContactForm() {
               <p className="font-mono text-sm tracking-widest text-violet-300 uppercase">
                 ✓ PAYLOAD RECIBIDO — CONEXIÓN ESTABLECIDA
               </p>
-              <p className="mt-2 text-sm text-gray-500">Te contactamos en menos de 24h.</p>
+              <p className="mt-2 text-sm text-gray-500">¡Listo! Te escribimos en menos de 24h 🚀</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -118,7 +118,7 @@ export default function ContactForm() {
                 disabled={isSubmitting}
                 className="mt-6 w-full rounded-lg bg-violet-600 py-4 font-mono text-sm tracking-widest text-white uppercase transition-all duration-200 hover:bg-violet-500 hover:shadow-[0_0_30px_rgba(139,92,246,0.5)] disabled:cursor-not-allowed disabled:opacity-50"
               >
-                {isSubmitting ? 'PROCESANDO...' : 'TRANSMITIR DATOS →'}
+                {isSubmitting ? 'PROCESANDO...' : 'Quiero mi cotización →'}
               </button>
             </form>
           )}

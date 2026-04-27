@@ -16,15 +16,14 @@ export default function Footer() {
               </span>
             </div>
             <p className="max-w-sm text-sm leading-relaxed text-gray-500">
-              Ingeniería de software de grado industrial impulsada por IA. Construimos el futuro
-              digital de organizaciones que exigen excelencia.
+              Hacemos realidad las ideas de negocios que necesitan software a medida. Rápido, robusto y con soporte real.
             </p>
           </div>
 
           {/* Módulos */}
           <div>
             <h3 className="mb-4 font-mono text-xs tracking-widest text-white/60 uppercase">
-              Módulos
+              Nuestras soluciones
             </h3>
             <ul className="space-y-2">
               {['ZM Industrial Core', 'ZM Beauty Engine', 'ZM Workshop & Parts'].map((item) => (
@@ -43,7 +42,7 @@ export default function Footer() {
           {/* Social */}
           <div>
             <h3 className="mb-4 font-mono text-xs tracking-widest text-white/60 uppercase">
-              Red Social
+              Síguenos
             </h3>
             <div className="flex gap-3">
               {[

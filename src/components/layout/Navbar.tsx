@@ -69,7 +69,7 @@ export default function Navbar() {
               onClick={() => handleLinkClick('#contacto')}
               className="hidden rounded bg-violet-600 px-5 py-2 font-mono text-xs tracking-wider text-white uppercase transition-all duration-200 hover:bg-violet-500 hover:shadow-[0_0_20px_rgba(139,92,246,0.6)] md:inline-flex"
             >
-              INICIAR SISTEMA
+              Habla con nosotros
             </button>
             <button
               className="text-white/70 transition-colors hover:text-white md:hidden"
@@ -106,7 +106,7 @@ export default function Navbar() {
                 onClick={() => handleLinkClick('#contacto')}
                 className="mt-2 rounded bg-violet-600 px-5 py-3 text-center font-mono text-xs tracking-wider text-white uppercase transition-all hover:bg-violet-500 hover:shadow-[0_0_20px_rgba(139,92,246,0.6)]"
               >
-                INICIAR SISTEMA
+                Habla con nosotros
               </button>
             </div>
           </motion.div>

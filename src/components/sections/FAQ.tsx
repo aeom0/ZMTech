@@ -6,29 +6,24 @@ import { ChevronDown } from 'lucide-react'
 
 const faqs = [
   {
-    question: '¿Quién es dueño del código fuente?',
+    question: '¿El código me pertenece a mí o a ZM Tech?',
     answer:
-      'Tú. El 100% del código fuente, repositorios y accesos son transferidos al cliente al completar el proyecto. Sin cláusulas ocultas ni licencias restringidas.',
+      'Tuyo 100%. Al cerrar el proyecto, te entregamos el repositorio completo, las credenciales de la infraestructura y la documentación. No hay letras chiquitas, no hay dependencia de nosotros para que tu sistema funcione.',
   },
   {
-    question: '¿Cómo funciona el mantenimiento evolutivo con IA?',
+    question: '¿Qué pasa después de que lancen mi app?',
     answer:
-      'Ofrecemos planes mensuales que incluyen monitoreo automatizado con IA, detección predictiva de fallos, actualizaciones de dependencias, nuevas features y soporte prioritario vía WhatsApp. El sistema no solo reacciona: anticipa.',
+      'No desaparecemos. Ofrecemos planes de mantenimiento donde monitoreamos tu sistema, resolvemos errores y vamos mejorando el software con el tiempo — con soporte de IA que detecta problemas antes de que tú los notes.',
   },
   {
-    question: '¿Cuáles son los tiempos de entrega promedio?',
+    question: '¿Cuánto tarda en estar lista mi aplicación?',
     answer:
-      'Dependiendo de la complejidad, entregamos MVPs en 3 a 8 semanas. Trabajamos con sprints semanales y entregas continuas para que veas progreso desde el día 1.',
+      'Depende del proyecto, pero gracias a nuestra arquitectura modular pre-construida, un MVP sólido puede estar listo en 4 a 6 semanas. Mucho menos que el promedio del mercado, sin sacrificar calidad.',
   },
   {
-    question: '¿Trabajan exclusivamente con ciertas industrias?',
+    question: '¿Solo trabajan con ciertas industrias?',
     answer:
-      'No. Aunque tenemos verticales especializadas en industria, belleza y automotriz, desarrollamos soluciones para cualquier nicho. Tenemos clientes en Venezuela, Colombia, Perú y EEUU.',
-  },
-  {
-    question: '¿Qué pasa después del lanzamiento?',
-    answer:
-      'Los primeros 30 días post-lanzamiento incluyen ajustes sin costo adicional. Después, tu plan de mantenimiento cubre las iteraciones, mejoras y soporte técnico continuo.',
+      'Tenemos verticales especializadas en Industria, Belleza y Automotriz, pero nos adaptamos a cualquier negocio que necesite software serio. Si tienes un problema real, nosotros tenemos la solución.',
   },
 ]
 
@@ -42,7 +37,8 @@ export default function FAQ() {
           <p className="mb-3 font-mono text-xs tracking-widest text-violet-400 uppercase">
             BASE DE CONOCIMIENTO
           </p>
-          <h2 className="text-4xl font-black text-white">Protocolos Frecuentes</h2>
+          <h2 className="text-4xl font-black text-white">Preguntas frecuentes</h2>
+          <p className="mt-4 text-gray-400">Todo lo que necesitas saber antes de empezar</p>
         </div>
 
         <div className="space-y-2">

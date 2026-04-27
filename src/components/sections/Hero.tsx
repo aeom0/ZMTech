@@ -41,7 +41,7 @@ export default function Hero() {
             >
               <span className="inline-flex items-center gap-2 rounded-full border border-violet-500/30 bg-violet-500/10 px-3 py-1 font-mono text-xs tracking-widest text-violet-300 uppercase">
                 <span className="h-2 w-2 animate-pulse rounded-full bg-green-400" />
-                SISTEMAS OPERATIVOS EN LÍNEA
+                Tu próxima app empieza aquí
               </span>
             </motion.div>
 
@@ -72,8 +72,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.55 }}
             >
-              Desarrollamos tu App/Web con precisión industrial y soporte inteligente 24/7. De la
-              idea al mercado en tiempo récord, construido para escalar.
+              Convertimos tu idea en software real. Rápido, elegante y listo para crecer contigo desde el primer día.
             </motion.p>
 
             {/* CTAs */}
@@ -136,9 +135,9 @@ export default function Hero() {
                 <Settings className="animate-spin-slow h-5 w-5 text-violet-400" />
                 <div>
                   <p className="font-mono text-xs tracking-wider text-gray-400 uppercase">
-                    SYSTEM STATUS
+                    Proyectos activos
                   </p>
-                  <p className="font-mono text-sm text-green-400">Optimal Performance</p>
+                  <p className="font-mono text-sm text-green-400">3 verticales en producción</p>
                 </div>
               </div>
             </div>
