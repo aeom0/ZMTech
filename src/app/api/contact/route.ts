@@ -15,7 +15,6 @@ export async function POST(req: NextRequest) {
     const body = await req.json()
     const data = schema.parse(body)
 
-    // --- Supabase: guardar lead ---
     const supabase = createClient(
       process.env.SUPABASE_URL!,
       process.env.SUPABASE_SERVICE_ROLE_KEY!
@@ -30,13 +29,12 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'DB error' }, { status: 500 })
     }
 
-    // --- Resend: notificación por email ---
     const resend = new Resend(process.env.RESEND_API_KEY!)
 
     await resend.emails.send({
       from: 'ZM Tech <onboarding@resend.dev>',
-      to: [process.env.CONTACT_EMAIL ?? 'tu@email.com'],
-      subject: `🚀 Nuevo lead: ${data.nombre} — ${data.empresa}`,
+      to: [process.env.CONTACT_EMAIL ?? 'albertoorta.1@gmail.com'],
+      subject: `Nuevo lead: ${data.nombre} — ${data.empresa}`,
       html: `
         <div style="font-family: monospace; background: #050505; color: #fff; padding: 32px; border-radius: 8px;">
           <h2 style="color: #8b5cf6; margin: 0 0 24px;">ZM Tech — Nuevo Lead</h2>
