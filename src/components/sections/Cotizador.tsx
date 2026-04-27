@@ -21,7 +21,7 @@ const tipos = [
   { id: 'landing',     label: 'Landing Page',     desc: 'Una página, orientada a conversión',      icon: Globe,        min: 120,  max: 180,  dias: '3–5 días'   },
   { id: 'corporativa', label: 'Sitio Corporativo', desc: 'Multi-sección, portafolio o empresa',     icon: Factory,      min: 250,  max: 400,  dias: '7–14 días'  },
   { id: 'ecommerce',   label: 'E-commerce',        desc: 'Tienda online con catálogo y pagos',      icon: ShoppingCart, min: 500,  max: 800,  dias: '14–21 días' },
-  { id: 'saas',        label: 'Web App / SaaS',    desc: 'Dashboard, auth y lógica de negocio',     icon: Sparkles,     min: 800,  max: 1500, dias: '21–45 días' },
+  { id: 'saas',        label: 'Aplicación Web',     desc: 'Panel de control, acceso por usuario y lógica de negocio', icon: Sparkles, min: 800, max: 1500, dias: '21–45 días' },
 ]
 
 // ─── Niveles de diseño ───────────────────────────────────────────────────────
@@ -83,7 +83,7 @@ const packs = [
     includes: [
       'Todo lo del Plan Negocio',
       'Facturación SENIAT automática',
-      'Supabase Auth + Roles',
+      'Acceso seguro por usuario y roles',
       'Google Calendar sincronizado',
       'Monitoreo 24/7 + backups diarios',
       'Soporte dedicado (4h)',
@@ -114,7 +114,7 @@ const extraGroups: ExtraGroup[] = [
     color: 'text-blue-400',
     items: [
       { id: 'stripe',       label: 'Stripe',                  desc: 'Cobros en dólares o euros con tarjeta y link de pago. Ideal para la diáspora.',   price: 45 },
-      { id: 'cashea',       label: 'Visor de cuotas Cashea',  desc: 'Widget que muestra el pago semanal — más claridad para el cliente, más ventas.',   price: 30 },
+      { id: 'cashea',       label: 'Visor de cuotas Cashea',  desc: 'Muestra las cuotas al instante en tu tienda — más claridad para el cliente, más ventas.', price: 30 },
     ],
   },
   {
@@ -137,7 +137,7 @@ const extraGroups: ExtraGroup[] = [
     category: 'Técnico',
     color: 'text-violet-400',
     items: [
-      { id: 'auth',         label: 'Supabase Auth + Roles',   desc: 'Login con correo o Google y permisos granulares por usuario.',                     price: 50 },
+      { id: 'auth',         label: 'Acceso seguro + Roles',    desc: 'Ingreso con correo o Google y control de acceso por usuario.',                    price: 50 },
       { id: 'form',         label: 'Formulario de leads',     desc: 'Captura de contactos con validación, email y guardado en BD.',                     price: 20 },
     ],
   },
@@ -250,7 +250,7 @@ export default function Cotizador() {
               <p>✓ 50% anticipo · 50% entrega</p>
               <p>✓ Código fuente 100% tuyo</p>
               <p>✓ Cancela el plan cuando quieras</p>
-              <p>✓ Next.js 15 + Tailwind CSS</p>
+              <p>✓ Tecnología de primer nivel</p>
             </div>
 
             {/* CTA */}

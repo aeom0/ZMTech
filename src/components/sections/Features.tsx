@@ -61,7 +61,7 @@ export default function Features() {
             className="lg:pr-8"
           >
             <p className="mb-3 font-mono text-xs tracking-widest text-violet-400 uppercase">
-              CORE ENGINE
+              MOTOR ZM
             </p>
             <h2 className="mb-6 text-5xl leading-tight font-black text-white">Por qué ZM Tech</h2>
             <p className="mb-8 leading-relaxed text-gray-400">

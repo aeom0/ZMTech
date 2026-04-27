@@ -8,7 +8,7 @@ const faqs = [
   {
     question: '¿El código me pertenece a mí o a ZM Tech?',
     answer:
-      'Tuyo 100%. Al cerrar el proyecto, te entregamos el repositorio completo, las credenciales de la infraestructura y la documentación. No hay letras chiquitas, no hay dependencia de nosotros para que tu sistema funcione.',
+      'Tuyo 100%. Al cerrar el proyecto, te entregamos el código completo, las claves de acceso al servidor y la documentación. No hay letras chiquitas, no hay dependencia de nosotros para que tu sistema funcione.',
   },
   {
     question: '¿Qué pasa después de que lancen mi app?',
@@ -18,7 +18,7 @@ const faqs = [
   {
     question: '¿Cuánto tarda en estar lista mi aplicación?',
     answer:
-      'Depende del proyecto, pero gracias a nuestra arquitectura modular pre-construida, un MVP sólido puede estar listo en 4 a 6 semanas. Mucho menos que el promedio del mercado, sin sacrificar calidad.',
+      'Depende del proyecto, pero gracias a nuestra metodología de trabajo, una primera versión funcional puede estar lista en 4 a 6 semanas. Mucho menos que el promedio del mercado, sin sacrificar calidad.',
   },
   {
     question: '¿Solo trabajan con ciertas industrias?',

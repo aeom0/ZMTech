@@ -44,7 +44,7 @@ const integrations: Integration[] = [
     iconColor: 'text-green-400',
     glowColor: 'hover:border-green-500/50 hover:shadow-[0_0_20px_rgba(34,197,94,0.2)]',
     description:
-      'Muestra el visor de cuotas Cashea en tu app o e-commerce. Tus clientes ven al instante cuánto pagan por semana — y eso cierra más ventas.',
+      'Muestra las cuotas Cashea en tu tienda o sistema. Tus clientes ven al instante cuánto pagan por semana — y eso cierra más ventas.',
   },
   {
     name: 'WhatsApp Business',
@@ -117,14 +117,14 @@ const integrations: Integration[] = [
       'Conecta tu catálogo de productos directamente con Instagram Shopping y Meta Ads. Más alcance, sin trabajo extra de tu parte.',
   },
   {
-    name: 'Supabase Auth',
+    name: 'Acceso Seguro',
     category: 'Seguridad',
     categoryColor: 'text-violet-400 border-violet-400/30 bg-violet-400/10',
     icon: Shield,
     iconColor: 'text-violet-400',
     glowColor: 'hover:border-violet-500/50 hover:shadow-[0_0_20px_rgba(167,139,250,0.2)]',
     description:
-      'Login seguro con correo, Google o magic link. Roles y permisos por usuario para que cada quien acceda solo a lo que le corresponde.',
+      'Ingreso seguro con correo, Google o enlace mágico. Control de acceso por usuario para que cada quien vea solo lo que le corresponde.',
   },
 ]
 
