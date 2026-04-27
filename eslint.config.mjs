@@ -1,5 +1,6 @@
 import nextConfig from 'eslint-config-next'
 import nextTypescript from 'eslint-config-next/typescript'
+import prettier from 'eslint-config-prettier'
 
 export default [
   ...nextConfig,
@@ -9,4 +10,5 @@ export default [
       '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
     },
   },
+  prettier,
 ]

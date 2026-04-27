@@ -30,33 +30,33 @@ export default function Navbar() {
 
   return (
     <motion.header
-      className={`sticky top-0 z-50 transition-all duration-300 border-b ${
+      className={`sticky top-0 z-50 border-b transition-all duration-300 ${
         scrolled
-          ? 'backdrop-blur-md bg-black/60 border-white/10'
-          : 'bg-transparent border-transparent'
+          ? 'border-white/10 bg-black/60 backdrop-blur-md'
+          : 'border-transparent bg-transparent'
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <TerminalSquare className="w-6 h-6 text-violet-500" />
-            <span className="font-mono font-bold tracking-wider text-xl">
+            <TerminalSquare className="h-6 w-6 text-violet-500" />
+            <span className="font-mono text-xl font-bold tracking-wider">
               <span className="text-white">ZM</span>
               <span className="text-violet-500">TECH</span>
             </span>
           </div>
 
           {/* Links desktop */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden items-center gap-8 md:flex">
             {navLinks.map((link) => (
               <button
                 key={link.href}
                 onClick={() => handleLinkClick(link.href)}
-                className="font-mono text-xs uppercase tracking-widest text-white/60 hover:text-violet-400 transition-colors duration-200"
+                className="font-mono text-xs tracking-widest text-white/60 uppercase transition-colors duration-200 hover:text-violet-400"
               >
                 {link.label}
               </button>
@@ -67,16 +67,16 @@ export default function Navbar() {
           <div className="flex items-center gap-4">
             <button
               onClick={() => handleLinkClick('#contacto')}
-              className="hidden md:inline-flex px-5 py-2 rounded bg-violet-600 text-white font-mono text-xs uppercase tracking-wider transition-all duration-200 hover:bg-violet-500 hover:shadow-[0_0_20px_rgba(139,92,246,0.6)]"
+              className="hidden rounded bg-violet-600 px-5 py-2 font-mono text-xs tracking-wider text-white uppercase transition-all duration-200 hover:bg-violet-500 hover:shadow-[0_0_20px_rgba(139,92,246,0.6)] md:inline-flex"
             >
               INICIAR SISTEMA
             </button>
             <button
-              className="md:hidden text-white/70 hover:text-white transition-colors"
+              className="text-white/70 transition-colors hover:text-white md:hidden"
               onClick={() => setMobileOpen((v) => !v)}
               aria-label="Abrir menú"
             >
-              {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
         </div>
@@ -90,21 +90,21 @@ export default function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25 }}
-            className="md:hidden overflow-hidden border-t border-white/10 bg-black/90 backdrop-blur-xl"
+            className="overflow-hidden border-t border-white/10 bg-black/90 backdrop-blur-xl md:hidden"
           >
-            <div className="flex flex-col px-6 py-4 gap-4">
+            <div className="flex flex-col gap-4 px-6 py-4">
               {navLinks.map((link) => (
                 <button
                   key={link.href}
                   onClick={() => handleLinkClick(link.href)}
-                  className="text-left font-mono text-xs uppercase tracking-widest text-white/60 hover:text-violet-400 transition-colors py-1"
+                  className="py-1 text-left font-mono text-xs tracking-widest text-white/60 uppercase transition-colors hover:text-violet-400"
                 >
                   {link.label}
                 </button>
               ))}
               <button
                 onClick={() => handleLinkClick('#contacto')}
-                className="mt-2 px-5 py-3 rounded bg-violet-600 text-white font-mono text-xs uppercase tracking-wider text-center hover:bg-violet-500 hover:shadow-[0_0_20px_rgba(139,92,246,0.6)] transition-all"
+                className="mt-2 rounded bg-violet-600 px-5 py-3 text-center font-mono text-xs tracking-wider text-white uppercase transition-all hover:bg-violet-500 hover:shadow-[0_0_20px_rgba(139,92,246,0.6)]"
               >
                 INICIAR SISTEMA
               </button>

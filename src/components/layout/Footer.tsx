@@ -4,18 +4,18 @@ import Link from 'next/link'
 export default function Footer() {
   return (
     <footer className="border-t border-white/10 bg-black pt-16 pb-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-12 grid grid-cols-1 gap-12 md:grid-cols-4">
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
-              <TerminalSquare className="w-6 h-6 text-violet-500" />
-              <span className="font-mono font-bold tracking-wider text-xl">
+            <div className="mb-4 flex items-center gap-2">
+              <TerminalSquare className="h-6 w-6 text-violet-500" />
+              <span className="font-mono text-xl font-bold tracking-wider">
                 <span className="text-white">ZM</span>
                 <span className="text-violet-500">TECH</span>
               </span>
             </div>
-            <p className="text-gray-500 text-sm leading-relaxed max-w-sm">
+            <p className="max-w-sm text-sm leading-relaxed text-gray-500">
               Ingeniería de software de grado industrial impulsada por IA. Construimos el futuro
               digital de organizaciones que exigen excelencia.
             </p>
@@ -23,7 +23,7 @@ export default function Footer() {
 
           {/* Módulos */}
           <div>
-            <h3 className="font-mono text-xs uppercase tracking-widest text-white/60 mb-4">
+            <h3 className="mb-4 font-mono text-xs tracking-widest text-white/60 uppercase">
               Módulos
             </h3>
             <ul className="space-y-2">
@@ -31,7 +31,7 @@ export default function Footer() {
                 <li key={item}>
                   <Link
                     href="#verticales"
-                    className="text-gray-500 hover:text-white text-sm transition-colors"
+                    className="text-sm text-gray-500 transition-colors hover:text-white"
                   >
                     {item}
                   </Link>
@@ -42,7 +42,7 @@ export default function Footer() {
 
           {/* Social */}
           <div>
-            <h3 className="font-mono text-xs uppercase tracking-widest text-white/60 mb-4">
+            <h3 className="mb-4 font-mono text-xs tracking-widest text-white/60 uppercase">
               Red Social
             </h3>
             <div className="flex gap-3">
@@ -55,9 +55,9 @@ export default function Footer() {
                   key={label}
                   href="#"
                   aria-label={label}
-                  className="w-9 h-9 flex items-center justify-center rounded-full border border-white/10 bg-white/5 text-gray-400 hover:bg-violet-500/20 hover:border-violet-500/50 hover:text-white transition-all duration-200"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-gray-400 transition-all duration-200 hover:border-violet-500/50 hover:bg-violet-500/20 hover:text-white"
                 >
-                  <Icon className="w-4 h-4" />
+                  <Icon className="h-4 w-4" />
                 </Link>
               ))}
             </div>
@@ -65,7 +65,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-gray-600">
+        <div className="flex flex-col items-center justify-between gap-2 border-t border-white/10 pt-8 text-xs text-gray-600 sm:flex-row">
           <span>© 2025 ZM Tech. Todos los derechos reservados.</span>
           <span>Hecho con ⚡ en Venezuela</span>
         </div>

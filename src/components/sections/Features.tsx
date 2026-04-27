@@ -50,9 +50,8 @@ const features: Feature[] = [
 export default function Features() {
   return (
     <section id="ventajas" className="py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 items-center gap-20 lg:grid-cols-2">
           {/* LEFT COLUMN */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -61,30 +60,28 @@ export default function Features() {
             viewport={{ once: true }}
             className="lg:pr-8"
           >
-            <p className="font-mono text-xs uppercase tracking-widest text-violet-400 mb-3">
+            <p className="mb-3 font-mono text-xs tracking-widest text-violet-400 uppercase">
               CORE ENGINE
             </p>
-            <h2 className="text-5xl font-black text-white leading-tight mb-6">
-              Por qué{' '}ZM Tech
-            </h2>
-            <p className="text-gray-400 leading-relaxed mb-8">
+            <h2 className="mb-6 text-5xl leading-tight font-black text-white">Por qué ZM Tech</h2>
+            <p className="mb-8 leading-relaxed text-gray-400">
               No construimos páginas web genéricas. Desarrollamos infraestructuras de software
               robustas diseñadas para dominar tu nicho de mercado.
             </p>
 
             {/* Terminal box */}
-            <div className="bg-black border border-white/10 rounded-xl mt-8 p-6 font-mono text-sm">
+            <div className="mt-8 rounded-xl border border-white/10 bg-black p-6 font-mono text-sm">
               <p className="text-green-400">&gt; status: operational</p>
               <p className="text-green-400">&gt; latency: &lt; 50ms</p>
               <p className="text-green-400">
                 &gt; security_protocols: active
-                <span className="inline-block w-2 h-4 bg-green-400 ml-1 animate-pulse align-middle" />
+                <span className="ml-1 inline-block h-4 w-2 animate-pulse bg-green-400 align-middle" />
               </p>
             </div>
           </motion.div>
 
           {/* RIGHT COLUMN — 2x2 grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {features.map((f, index) => (
               <motion.div
                 key={f.title}
@@ -92,17 +89,18 @@ export default function Features() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white/5 border border-white/10 rounded-xl p-5 hover:border-white/20 transition-colors duration-300"
+                className="rounded-xl border border-white/10 bg-white/5 p-5 transition-colors duration-300 hover:border-white/20"
               >
-                <div className={`w-10 h-10 rounded-lg ${f.iconBg} flex items-center justify-center mb-3`}>
-                  <f.icon className={`w-5 h-5 ${f.iconColor}`} />
+                <div
+                  className={`h-10 w-10 rounded-lg ${f.iconBg} mb-3 flex items-center justify-center`}
+                >
+                  <f.icon className={`h-5 w-5 ${f.iconColor}`} />
                 </div>
-                <h3 className="font-bold text-white text-sm mb-2">{f.title}</h3>
-                <p className="text-gray-400 text-xs leading-relaxed">{f.description}</p>
+                <h3 className="mb-2 text-sm font-bold text-white">{f.title}</h3>
+                <p className="text-xs leading-relaxed text-gray-400">{f.description}</p>
               </motion.div>
             ))}
           </div>
-
         </div>
       </div>
     </section>

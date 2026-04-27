@@ -35,51 +35,41 @@ export default function ContactForm() {
 
   return (
     <section id="contacto" className="py-24">
-      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="border border-white/10 rounded-xl p-8 bg-white/2">
+      <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
+        <div className="rounded-xl border border-white/10 bg-white/2 p-8">
           {/* Header */}
-          <div className="flex items-center gap-3 mb-2">
-            <Terminal className="w-6 h-6 text-violet-400" />
-            <h2 className="font-black text-3xl text-white">Inicializar Conexión</h2>
+          <div className="mb-2 flex items-center gap-3">
+            <Terminal className="h-6 w-6 text-violet-400" />
+            <h2 className="text-3xl font-black text-white">Inicializar Conexión</h2>
           </div>
-          <p className="font-mono text-sm text-gray-500 mb-4">
-            Status: Ready to receive payload
-          </p>
-          <div className="border-t border-white/10 mb-8" />
+          <p className="mb-4 font-mono text-sm text-gray-500">Status: Ready to receive payload</p>
+          <div className="mb-8 border-t border-white/10" />
 
           {submitted ? (
-            <div className="text-center py-16 border border-violet-500/30 rounded-xl bg-violet-500/5">
-              <p className="font-mono text-violet-300 text-sm uppercase tracking-widest">
+            <div className="rounded-xl border border-violet-500/30 bg-violet-500/5 py-16 text-center">
+              <p className="font-mono text-sm tracking-widest text-violet-300 uppercase">
                 ✓ PAYLOAD RECIBIDO — CONEXIÓN ESTABLECIDA
               </p>
-              <p className="text-gray-500 text-sm mt-2">Te contactamos en menos de 24h.</p>
+              <p className="mt-2 text-sm text-gray-500">Te contactamos en menos de 24h.</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit(onSubmit)}>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                 {/* Nombre */}
                 <div>
                   <label className={labelClass}>NOMBRE / OPERADOR</label>
-                  <input
-                    {...register('nombre')}
-                    className={inputClass}
-                    placeholder="John Doe"
-                  />
+                  <input {...register('nombre')} className={inputClass} placeholder="John Doe" />
                   {errors.nombre && (
-                    <p className="text-red-400 font-mono text-xs mt-1">{errors.nombre.message}</p>
+                    <p className="mt-1 font-mono text-xs text-red-400">{errors.nombre.message}</p>
                   )}
                 </div>
 
                 {/* Empresa */}
                 <div>
                   <label className={labelClass}>EMPRESA / ORGANIZACIÓN</label>
-                  <input
-                    {...register('empresa')}
-                    className={inputClass}
-                    placeholder="Acme Corp"
-                  />
+                  <input {...register('empresa')} className={inputClass} placeholder="Acme Corp" />
                   {errors.empresa && (
-                    <p className="text-red-400 font-mono text-xs mt-1">{errors.empresa.message}</p>
+                    <p className="mt-1 font-mono text-xs text-red-400">{errors.empresa.message}</p>
                   )}
                 </div>
 
@@ -92,7 +82,7 @@ export default function ContactForm() {
                     placeholder="+1 234 567 8900"
                   />
                   {errors.whatsapp && (
-                    <p className="text-red-400 font-mono text-xs mt-1">{errors.whatsapp.message}</p>
+                    <p className="mt-1 font-mono text-xs text-red-400">{errors.whatsapp.message}</p>
                   )}
                 </div>
 
@@ -105,7 +95,9 @@ export default function ContactForm() {
                     placeholder="Ej: $5k - $10k"
                   />
                   {errors.presupuesto && (
-                    <p className="text-red-400 font-mono text-xs mt-1">{errors.presupuesto.message}</p>
+                    <p className="mt-1 font-mono text-xs text-red-400">
+                      {errors.presupuesto.message}
+                    </p>
                   )}
                 </div>
               </div>
@@ -113,7 +105,7 @@ export default function ContactForm() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full mt-6 py-4 rounded-lg bg-violet-600 text-white font-mono uppercase tracking-widest text-sm transition-all duration-200 hover:bg-violet-500 hover:shadow-[0_0_30px_rgba(139,92,246,0.5)] disabled:opacity-50 disabled:cursor-not-allowed"
+                className="mt-6 w-full rounded-lg bg-violet-600 py-4 font-mono text-sm tracking-widest text-white uppercase transition-all duration-200 hover:bg-violet-500 hover:shadow-[0_0_30px_rgba(139,92,246,0.5)] disabled:cursor-not-allowed disabled:opacity-50"
               >
                 {isSubmitting ? 'PROCESANDO...' : 'TRANSMITIR DATOS →'}
               </button>

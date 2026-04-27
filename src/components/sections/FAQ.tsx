@@ -37,9 +37,9 @@ export default function FAQ() {
 
   return (
     <section id="faq" className="py-24">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <p className="font-mono text-xs uppercase tracking-widest text-violet-400 mb-3">
+      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-16 text-center">
+          <p className="mb-3 font-mono text-xs tracking-widest text-violet-400 uppercase">
             BASE DE CONOCIMIENTO
           </p>
           <h2 className="text-4xl font-black text-white">Protocolos Frecuentes</h2>
@@ -47,26 +47,23 @@ export default function FAQ() {
 
         <div className="space-y-2">
           {faqs.map((faq, index) => (
-            <div
-              key={index}
-              className="border border-white/10 rounded-xl overflow-hidden"
-            >
+            <div key={index} className="overflow-hidden rounded-xl border border-white/10">
               <button
-                className="w-full flex items-center justify-between p-5 text-left hover:bg-white/3 transition-colors"
+                className="flex w-full items-center justify-between p-5 text-left transition-colors hover:bg-white/3"
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
               >
                 <div className="flex items-center gap-4 pr-4">
-                  <span className="font-mono text-sm text-violet-400 shrink-0">
+                  <span className="shrink-0 font-mono text-sm text-violet-400">
                     {String(index + 1).padStart(2, '0')}
                   </span>
-                  <span className="text-white font-medium text-sm">{faq.question}</span>
+                  <span className="text-sm font-medium text-white">{faq.question}</span>
                 </div>
                 <motion.div
                   animate={{ rotate: openIndex === index ? 180 : 0 }}
                   transition={{ duration: 0.2 }}
                   className="shrink-0"
                 >
-                  <ChevronDown className="w-5 h-5 text-violet-400" />
+                  <ChevronDown className="h-5 w-5 text-violet-400" />
                 </motion.div>
               </button>
 
@@ -80,7 +77,7 @@ export default function FAQ() {
                     transition={{ duration: 0.25 }}
                     className="overflow-hidden"
                   >
-                    <p className="px-5 pb-5 pl-17 text-gray-400 text-sm leading-relaxed">
+                    <p className="px-5 pb-5 pl-17 text-sm leading-relaxed text-gray-400">
                       {faq.answer}
                     </p>
                   </motion.div>
