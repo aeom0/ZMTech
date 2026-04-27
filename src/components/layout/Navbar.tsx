@@ -7,6 +7,7 @@ import { TerminalSquare, Menu, X } from 'lucide-react'
 const navLinks = [
   { label: 'VERTICALES', href: '#verticales' },
   { label: 'VENTAJAS', href: '#ventajas' },
+  { label: 'INTEGRACIONES', href: '#integraciones' },
   { label: 'COTIZADOR', href: '#cotizador' },
   { label: 'FAQ', href: '#faq' },
 ]
