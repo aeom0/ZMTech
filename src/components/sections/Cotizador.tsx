@@ -92,8 +92,23 @@ const packs = [
   },
 ]
 
+// ─── Tipos explícitos ────────────────────────────────────────────────────────
+interface ExtraItem {
+  id: string
+  label: string
+  desc: string
+  price: number
+  requiresPack?: string
+}
+
+interface ExtraGroup {
+  category: string
+  color: string
+  items: ExtraItem[]
+}
+
 // ─── Extras à la carte (pago único) ──────────────────────────────────────────
-const extraGroups = [
+const extraGroups: ExtraGroup[] = [
   {
     category: 'Integraciones de pago',
     color: 'text-blue-400',
@@ -107,7 +122,7 @@ const extraGroups = [
     color: 'text-red-400',
     items: [
       { id: 'mercadolibre', label: 'MercadoLibre',            desc: 'Catálogo, stock y órdenes sincronizados en tiempo real desde tu sistema.',         price: 60 },
-      { id: 'seniat',       label: 'Facturación SENIAT',      desc: 'Facturas Art. 177 generadas automáticamente. Solo disponible en Plan Enterprise.', price: 65, requiresPack: 'enterprise' },
+      { id: 'seniat',       label: 'Facturación SENIAT',      desc: 'Facturas Art. 177 generadas automáticamente. Requiere Plan Enterprise.',           price: 65, requiresPack: 'enterprise' },
     ],
   },
   {
@@ -148,10 +163,14 @@ export default function Cotizador() {
   const minTotal = tipo ? Math.round(tipo.min * disenio.mul) + extrasSum : null
   const maxTotal = tipo ? Math.round(tipo.max * disenio.mul) + extrasSum : null
 
-  const toggleExtra = (id: string) => {
+  const isExtraLocked = (e: ExtraItem) =>
+    !!e.requiresPack && packId !== e.requiresPack
+
+  const toggleExtra = (e: ExtraItem) => {
+    if (isExtraLocked(e)) return
     setActiveExtras((prev) => {
       const next = new Set(prev)
-      next.has(id) ? next.delete(id) : next.add(id)
+      next.has(e.id) ? next.delete(e.id) : next.add(e.id)
       return next
     })
   }
@@ -394,7 +413,21 @@ export default function Cotizador() {
                       return (
                         <button
                           key={p.id}
-                          onClick={() => setPackId(active ? null : p.id)}
+                          onClick={() => {
+                          const next = active ? null : p.id
+                          setPackId(next)
+                          // limpiar extras que requieren el pack que se deseleccionó
+                          if (active) {
+                            const locked = extrasFlat.filter((e) => e.requiresPack === p.id).map((e) => e.id)
+                            if (locked.length) {
+                              setActiveExtras((prev) => {
+                                const s = new Set(prev)
+                                locked.forEach((id) => s.delete(id))
+                                return s
+                              })
+                            }
+                          }
+                        }}
                           className={`relative rounded-xl border p-4 text-left transition-all duration-200 ${
                             active ? p.borderActive : p.borderInactive
                           }`}
@@ -456,30 +489,45 @@ export default function Cotizador() {
                         <div className="flex flex-col gap-2">
                           {group.items.map((e) => {
                             const on = activeExtras.has(e.id)
+                            const locked = isExtraLocked(e)
                             return (
                               <button
                                 key={e.id}
-                                onClick={() => toggleExtra(e.id)}
+                                onClick={() => toggleExtra(e)}
+                                disabled={locked}
                                 className={`flex items-start justify-between rounded-lg border px-4 py-3 text-left transition-all duration-200 ${
-                                  on
-                                    ? 'border-violet-500/50 bg-violet-500/8'
+                                  locked
+                                    ? 'cursor-not-allowed border-white/5 bg-white/3 opacity-50'
+                                    : on
+                                    ? 'border-violet-500/50 bg-violet-500/10'
                                     : 'border-white/10 bg-white/5 hover:border-white/20'
                                 }`}
                               >
                                 <div className="flex flex-col gap-0.5 pr-4">
-                                  <span className={`text-sm font-medium ${on ? 'text-white' : 'text-gray-300'}`}>
-                                    {e.label}
-                                  </span>
+                                  <div className="flex items-center gap-2">
+                                    <span className={`text-sm font-medium ${on && !locked ? 'text-white' : 'text-gray-300'}`}>
+                                      {e.label}
+                                    </span>
+                                    {locked && (
+                                      <span className="rounded border border-amber-500/30 bg-amber-500/10 px-1.5 py-0.5 font-mono text-[10px] text-amber-400">
+                                        Enterprise
+                                      </span>
+                                    )}
+                                  </div>
                                   <span className="text-xs leading-relaxed text-gray-500">{e.desc}</span>
                                 </div>
                                 <div className="flex shrink-0 items-center gap-3 pt-0.5">
                                   <span className="font-mono text-xs text-gray-500">+${e.price}</span>
                                   <div
                                     className={`flex h-5 w-5 items-center justify-center rounded border transition-all ${
-                                      on ? 'border-violet-500 bg-violet-500' : 'border-white/20'
+                                      locked
+                                        ? 'border-white/10'
+                                        : on
+                                        ? 'border-violet-500 bg-violet-500'
+                                        : 'border-white/20'
                                     }`}
                                   >
-                                    {on && <Check className="h-3 w-3 text-white" />}
+                                    {on && !locked && <Check className="h-3 w-3 text-white" />}
                                   </div>
                                 </div>
                               </button>
