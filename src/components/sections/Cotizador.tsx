@@ -50,11 +50,20 @@ const disenios = [
 ]
 
 const extras = [
-  { id: 'seo', label: 'SEO básico on-page', price: 40 },
-  { id: 'whatsapp', label: 'Integración WhatsApp', price: 30 },
-  { id: 'form', label: 'Formulario de leads', price: 25 },
-  { id: 'host', label: 'Dominio + hosting año 1', price: 35 },
-  { id: 'mant', label: 'Mantenimiento mensual', price: 50, monthly: true },
+  { id: 'seo', label: 'SEO básico on-page', desc: 'Meta tags, sitemap, Open Graph y velocidad optimizada para Google', price: 40 },
+  { id: 'whatsapp', label: 'Integración WhatsApp Business', desc: 'Confirmaciones, recordatorios y atención al cliente sin intervención humana', price: 30 },
+  { id: 'form', label: 'Formulario de leads', desc: 'Captura de contactos con validación, notificación por email y guardado en BD', price: 25 },
+  { id: 'host', label: 'Dominio + hosting año 1', desc: 'Dominio .com o .ve + deploy en Vercel o VPS con SSL incluido', price: 35 },
+  { id: 'mercadolibre', label: 'Integración MercadoLibre', desc: 'Sincronización de catálogo, stock y órdenes en tiempo real desde tu sistema', price: 80 },
+  { id: 'cashea', label: 'Visor de cuotas Cashea', desc: 'Widget que muestra el pago semanal al cliente — aumenta la conversión', price: 45 },
+  { id: 'stripe', label: 'Integración Stripe', desc: 'Cobros en dólares, euros o cualquier moneda con tarjeta o link de pago', price: 60 },
+  { id: 'bcv', label: 'Tasa BCV automática', desc: 'Precios en bolívares actualizados cada día sin tocar el sistema manualmente', price: 35 },
+  { id: 'seniat', label: 'Facturación SENIAT', desc: 'Facturas y notas de entrega conformes con el Art. 177 generadas automáticamente', price: 90 },
+  { id: 'calendar', label: 'Sincronización Google Calendar', desc: 'Citas y reservas reflejadas en tiempo real en la agenda de tu equipo', price: 50 },
+  { id: 'telegram', label: 'Telegram Bot', desc: 'Alertas instantáneas de ventas, errores o recordatorios directo al equipo', price: 40 },
+  { id: 'meta', label: 'Catálogo Meta / Instagram', desc: 'Productos sincronizados con Instagram Shopping y Meta Ads automáticamente', price: 55 },
+  { id: 'auth', label: 'Supabase Auth + Roles', desc: 'Login con correo o Google y permisos por usuario sobre cada módulo', price: 70 },
+  { id: 'mant', label: 'Mantenimiento mensual', desc: 'Actualizaciones, backups, monitoreo y soporte técnico prioritario', price: 50, monthly: true },
 ]
 
 export default function Cotizador() {
@@ -186,16 +195,19 @@ export default function Cotizador() {
                     <button
                       key={e.id}
                       onClick={() => toggleExtra(e.id)}
-                      className={`flex items-center justify-between rounded-lg border px-4 py-3 transition-all duration-200 ${
+                      className={`flex items-start justify-between rounded-lg border px-4 py-3 text-left transition-all duration-200 ${
                         on
                           ? 'border-violet-500/50 bg-violet-500/8'
                           : 'border-white/10 bg-white/5 hover:border-white/20'
                       }`}
                     >
-                      <span className={`text-sm ${on ? 'text-white' : 'text-gray-400'}`}>
-                        {e.label}
-                      </span>
-                      <div className="flex items-center gap-3">
+                      <div className="flex flex-col gap-0.5 pr-4">
+                        <span className={`text-sm font-medium ${on ? 'text-white' : 'text-gray-300'}`}>
+                          {e.label}
+                        </span>
+                        <span className="text-xs leading-relaxed text-gray-500">{e.desc}</span>
+                      </div>
+                      <div className="flex shrink-0 items-center gap-3 pt-0.5">
                         <span className="font-mono text-xs text-gray-500">
                           +${e.price}
                           {e.monthly ? '/mes' : ''}
