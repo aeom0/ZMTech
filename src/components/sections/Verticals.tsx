@@ -89,8 +89,8 @@ export default function Verticals() {
                   className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
-                {/* Overlay gradient */}
-                <div className="absolute inset-0 bg-linear-to-t from-[#050505] via-transparent to-transparent" />
+                {/* Overlay gradient — fixed Tailwind v4 */}
+                <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, #050505, transparent)' }} />
                 {/* Violet tint */}
                 <div className="absolute inset-0 bg-violet-900/40 mix-blend-multiply" />
 

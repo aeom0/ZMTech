@@ -65,7 +65,7 @@ export default function Features() {
               CORE ENGINE
             </p>
             <h2 className="text-5xl font-black text-white leading-tight mb-6">
-              Por qué{'\n'}ZM Tech
+              Por qué{' '}ZM Tech
             </h2>
             <p className="text-gray-400 leading-relaxed mb-8">
               No construimos páginas web genéricas. Desarrollamos infraestructuras de software
@@ -92,7 +92,7 @@ export default function Features() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white/3 border border-white/8 rounded-xl p-5 hover:border-white/20 transition-colors duration-300"
+                className="bg-white/5 border border-white/10 rounded-xl p-5 hover:border-white/20 transition-colors duration-300"
               >
                 <div className={`w-10 h-10 rounded-lg ${f.iconBg} flex items-center justify-center mb-3`}>
                   <f.icon className={`w-5 h-5 ${f.iconColor}`} />

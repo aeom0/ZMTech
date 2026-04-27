@@ -15,7 +15,7 @@ export default function Hero() {
     <section className="relative min-h-screen overflow-hidden">
       {/* Hero gradient top-right */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-150 h-150 rounded-full bg-[radial-gradient(ellipse_at_top_right,rgba(139,92,246,0.15)_0%,transparent_60%)]" />
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full" style={{ background: 'radial-gradient(ellipse at top right, rgba(139,92,246,0.15) 0%, transparent 60%)' }} />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-24 min-h-screen">
@@ -46,10 +46,9 @@ export default function Hero() {
                 <motion.span
                   key={line}
                   className={`block ${
-                    i === 2
-                      ? 'bg-linear-to-r from-violet-400 via-purple-400 to-blue-400 bg-clip-text text-transparent'
-                      : 'text-white'
+                    i === 2 ? 'bg-clip-text text-transparent' : 'text-white'
                   }`}
+                  style={i === 2 ? { backgroundImage: 'linear-gradient(to right, #a78bfa, #c084fc, #60a5fa)' } : {}}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 + i * 0.1 }}
@@ -78,7 +77,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.7 }}
             >
               <button
-                onClick={() => scrollTo('contacto')}
+                onClick={() => scrollTo('cotizador')}
                 className="px-6 py-3 rounded-lg bg-violet-600 text-white font-mono uppercase tracking-wider text-sm transition-all duration-200 hover:bg-violet-500 hover:shadow-[0_0_25px_rgba(139,92,246,0.5)]"
               >
                 COTIZAR PROYECTO →
@@ -100,7 +99,7 @@ export default function Hero() {
             className="relative"
           >
             <div className="relative rounded-xl overflow-hidden ring-1 ring-violet-500/20 shadow-[0_0_40px_rgba(139,92,246,0.15)]">
-              <div className="relative h-105 lg:h-130 w-full">
+              <div className="relative h-[420px] lg:h-[520px] w-full">
                 <Image
                   src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80"
                   alt="Código de ingeniería de software"
@@ -109,10 +108,9 @@ export default function Hero() {
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   priority
                 />
-                {/* Overlay gradient */}
-                <div className="absolute inset-0 bg-linear-to-t from-transparent to-violet-900/20" />
-                {/* Edge blur mask */}
-                <div className="absolute inset-0 bg-linear-to-r from-[#050505]/20 via-transparent to-[#050505]/10" />
+                {/* Overlay gradients */}
+                <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, transparent, rgba(88,28,235,0.2))' }} />
+                <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(5,5,5,0.2), transparent, rgba(5,5,5,0.1))' }} />
               </div>
 
               {/* Floating status card */}
