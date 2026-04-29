@@ -6,7 +6,8 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 }
 
-const WA = 'https://wa.me/584144359434'
+// Tu número — quien recibe las consultas de Morelba
+const WA_ZM = 'https://wa.me/584144940417'
 
 export default function PropuestaGuataparo() {
   return (
@@ -179,7 +180,7 @@ export default function PropuestaGuataparo() {
           <p style={{ fontSize: 12.5, color: 'rgba(255,255,255,.65)', marginBottom: '1rem', lineHeight: 1.5 }}>
             Esta propuesta tiene validez de 15 días. Escríbenos cuando estés lista y empezamos esta semana.
           </p>
-          <a href={WA} target="_blank" rel="noopener noreferrer" style={{
+          <a href={WA_ZM} target="_blank" rel="noopener noreferrer" style={{
             display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,
             background: '#25D366', color: '#fff', fontSize: 14, fontWeight: 600,
             padding: '.75rem 1.25rem', borderRadius: 10, textDecoration: 'none', marginBottom: '.75rem'
@@ -189,7 +190,7 @@ export default function PropuestaGuataparo() {
             </svg>
             Confirmar propuesta por WhatsApp
           </a>
-          <p style={{ fontSize: 11, color: 'rgba(255,255,255,.4)' }}>guataparobienesraices@gmail.com · +58 414 435 9434</p>
+          <p style={{ fontSize: 11, color: 'rgba(255,255,255,.4)' }}>albertoorta.1@gmail.com · +58 414 494 0417</p>
         </div>
 
         {/* Footer */}
