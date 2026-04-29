@@ -9,7 +9,7 @@ export async function POST() {
   try {
     const resend = new Resend(process.env.RESEND_API_KEY!)
     const { data, error } = await resend.emails.send({
-      from: 'ZM Tech <noreply@zmtech.app>',
+      from: 'ZM Tech <onboarding@resend.dev>',
       to: ['guataparobienesraices@gmail.com'],
       subject: '🏠 Tu propuesta personalizada — Guataparo Bienes Raíces',
       html: `
