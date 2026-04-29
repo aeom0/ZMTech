@@ -1,13 +1,12 @@
 import { Resend } from 'resend'
 import { NextResponse } from 'next/server'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
-
 const PROPUESTA_URL = 'https://zmtech-landing.vercel.app/propuesta/guataparo'
 const WA_LINK = 'https://wa.me/584144359434'
 
 export async function POST() {
   try {
+    const resend = new Resend(process.env.RESEND_API_KEY!)
     const { data, error } = await resend.emails.send({
       from: 'ZM Tech <noreply@zmtech.app>',
       to: ['guataparobienesraices@gmail.com'],
