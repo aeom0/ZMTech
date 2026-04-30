@@ -1,0 +1,7 @@
+<svg width="300" height="80" viewBox="0 0 300 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="10" y="10" width="60" height="60" rx="14" fill="#7C3AED"/>
+  <path d="M22 27L37 40L22 53" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M43 53H58" stroke="white" stroke-width="6" stroke-linecap="round"/>
+  <text x="88" y="54" font-family="'Inter','Arial Black','Helvetica Neue',system-ui,sans-serif" font-weight="800" font-size="42" letter-spacing="-1" fill="#F0F0F5">ZM</text>
+  <text x="164" y="54" font-family="'Inter','Arial','Helvetica Neue',system-ui,sans-serif" font-weight="600" font-size="42" fill="#7C3AED">Tech</text>
+</svg>
