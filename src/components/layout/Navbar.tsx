@@ -2,14 +2,15 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { TerminalSquare, Menu, X } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
+import LogoZMTech from '@/components/brand/LogoZMTech'
 
 const navLinks = [
   { label: 'VERTICALES', href: '#verticales' },
   { label: 'VENTAJAS', href: '#ventajas' },
   { label: 'INTEGRACIONES', href: '#integraciones' },
   { label: 'COTIZADOR', href: '#cotizador' },
-  { label: 'FAQ', href: '#faq' },
+  { label: 'PROTOCOLOS FRECUENTES', href: '#faq' },
 ]
 
 export default function Navbar() {
@@ -43,13 +44,7 @@ export default function Navbar() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center gap-2">
-            <TerminalSquare className="h-6 w-6 text-violet-500" />
-            <span className="font-mono text-xl font-bold tracking-wider">
-              <span className="text-white">ZM</span>
-              <span className="text-violet-500">TECH</span>
-            </span>
-          </div>
+          <LogoZMTech priority className="items-center" />
 
           {/* Links desktop */}
           <nav className="hidden items-center gap-8 md:flex">

@@ -1,5 +1,6 @@
-import { TerminalSquare, Github, Linkedin, Twitter } from 'lucide-react'
+import { Github, Linkedin, Twitter } from 'lucide-react'
 import Link from 'next/link'
+import LogoZMTech from '@/components/brand/LogoZMTech'
 
 export default function Footer() {
   return (
@@ -9,11 +10,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="mb-4 flex items-center gap-2">
-              <TerminalSquare className="h-6 w-6 text-violet-500" />
-              <span className="font-mono text-xl font-bold tracking-wider">
-                <span className="text-white">ZM</span>
-                <span className="text-violet-500">TECH</span>
-              </span>
+              <LogoZMTech className="items-center" />
             </div>
             <p className="max-w-sm text-sm leading-relaxed text-gray-500">
               Hacemos realidad las ideas de negocios que necesitan software a medida. Rápido, robusto y con soporte real.

@@ -37,7 +37,7 @@ export default function FAQ() {
           <p className="mb-3 font-mono text-xs tracking-widest text-violet-400 uppercase">
             BASE DE CONOCIMIENTO
           </p>
-          <h2 className="text-4xl font-black text-white">Preguntas frecuentes</h2>
+          <h2 className="text-4xl font-black text-white">Protocolos Frecuentes</h2>
           <p className="mt-4 text-gray-400">Todo lo que necesitas saber antes de empezar</p>
         </div>
 
